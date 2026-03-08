@@ -1,0 +1,732 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: Lobster;
+    background: #44094e;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+header{
+    margin-top:10px;
+}
+h1{
+    font-size: 50px;
+    padding: 10px;
+    text-align: center;
+    color: deeppink;
+}
+h2{
+    font-size: 30px;
+    color: red;
+}
+.banner{
+    width: 250px;
+    margin-bottom: 10px;
+    border: 5px solid deeppink;
+    border-radius: 20px;
+}
+.imagen{
+    width: 130px;
+    margin-top: 5px;
+    border-radius: 50%;
+    border: 3px solid black;  
+}
+.imagen:hover{
+    transform:scale(1.2);
+    transition: 300ms;
+}
+.botonera{   
+    margin: auto;
+    background: purple;
+    text-align: center;
+    border-radius: 50px;
+}
+.botonera ul{
+    list-style: none;    
+}
+.botonera li{
+    display: inline-block;       
+}
+.botonera a{
+    text-decoration:none;
+    color:white;
+    display: block;
+    padding: 20px;
+}
+.botonera a:hover{
+    background-color: fuchsia;
+    color: blue;
+    border-radius: 47%;
+}
+.contenedor{
+    background-color:blueviolet;  
+    margin: 5px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex; /* Activa el modo de columnas */
+    justify-content:space-around; /* Separa los títulos equitativamente */
+    align-items: center; /* Los alinea verticalmente al centro */
+    flex-direction: column;
+}
+.boton-tienda{
+    background: yellow;
+    color: red;
+    font-family: Lobster;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;    
+    margin-top: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+.boton-tienda:hover{
+    background-color: fuchsia;
+    color: blue;
+    transform: scale(1.05);   
+}
+.content{
+    width: 250px;
+    background:rgb(202, 34, 79);  
+    height: 15vh;
+    margin-bottom: 5px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px; 
+}
+.icon{
+    font-size: 30px;
+    margin: 10px;
+    text-decoration: none;
+    color: yellow;
+    padding: 3px;
+    background: #000;
+    border-radius: 50%;
+}
+aside{
+    width: 400px;
+    background:deeppink;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+.social{    
+    font-size: 50px;
+    margin-left: 20px;
+    text-decoration: none;
+    color:white;
+    padding: 3px;
+    background: #000;
+    border-radius: 50%;
+}
+.footer-index{
+    width: 400px;
+    margin: 5px;
+    padding: 30px;
+    background-color: fuchsia;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;        
+}
+
+/*Estilos para Tienda Virtual*/
+.tienda{
+    width: 1000px;     
+    padding: 10px;   
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.producto{
+    background:deeppink;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.contenedor-imagen {
+    position: relative; /* Para posicionar el corazón encima de la imagen */
+    display: flex;
+    width: 200px;
+    height: 200px;        
+}
+.contenedor-imagen img{
+    width: 100%; 
+    border-radius: 8px;
+    object-fit:cover;
+    display: block;
+}
+/* Estilo inicial del botón (Gris/Apagado)*/
+.btn-favorito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #ccc; /* Color predeterminado */
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+/* Estado ACTIVO (Cuando se marca) */
+.btn-favorito.activo {
+    color: red; /* ojo para corazón / Amarillo para estrella */
+    transform: scale(1.2);
+}
+/* Si quieres que las estrellas sean amarillas en lugar de rojas */
+.btn-favorito.activo .fa-star {
+    color: #f1c40f;
+}
+.boton-comprar{
+    width:150px;
+    margin:auto;
+    display:block;
+    background:yellow;
+    color:black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius:20px;
+}
+.boton-comprar:hover{
+    background-color:yellowgreen;
+    color: blue;
+    transform: scale(1.05);
+}
+.footer-tienda{
+    width: 980px;
+    padding: 30px;
+    background-color: fuchsia;
+    color: black;    
+    text-align: center;    
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+/* Estilos para Galeria*/
+.galeria-container{
+    max-width: 1200px;
+    margin: 5px auto;
+    background-color:black;    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;    
+}
+.item{
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+.item:hover{
+    transform: scale(1.05);
+}
+.item img{
+    width: 100%;
+    height: 250px;
+    border: 3px solid fuchsia;    
+    object-fit:cover;
+    display: block;
+    cursor: zoom-in;
+}
+.footer-galeria{
+    width: 1050px;    
+    margin: 5px;
+    padding: 30px;    
+    background-color:fuchsia;
+    color: black;
+    text-align: center;    
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+/*Estilos para Modal Galeria*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1000;    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);/*Cierra suavemente en 0.7s*/
+}
+#imagen-modal{
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    transform: scale(0.9);
+    transition: transform 0.5s ease;    
+}
+#modal-galeria.visible {
+    /* EFECTO DE APERTURA: Rápido y fluido (0.5s) */
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+#modal-galeria.visible #imagen-modal {
+    transform: scale(1); /* Pequeño efecto de zoom al entrar */
+}
+.cerrar{
+    position: absolute;
+    color: white;
+    top: 20px;
+    right: 35px;    
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que el botón de cerrar esté por encima de la imagen */
+}
+
+/*Estilos para Video*/
+.video-container{    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;    
+}
+.video-item{   
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;    
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+    cursor: pointer;        
+}
+.video-item:hover{
+    transform: scale(1.02);
+}
+.video-item video{
+    width: 350px;
+    height: 350px;
+    object-fit:contain;
+    display: block;
+}
+.footer-video{
+    width: 715px;    
+    margin-top: 10px;
+    padding: 30px;    
+    background-color:fuchsia;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+
+/*Estilos para Gracias*/
+.img-container{    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;    
+}
+.img-item{   
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;    
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+    cursor: pointer;        
+}
+.img-item:hover{
+    transform: scale(1.02);
+}
+.img-item img{
+    width: 350px;
+    height: 350px;
+    object-fit:contain;
+    display: block;
+}
+.footer-gracias{
+    width: 715px;    
+    margin-top: 10px;
+    padding: 30px;    
+    background-color:fuchsia;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Estilos para Formulario*/
+.suscripcion{
+    width:700px;
+    margin-top: 10px;
+    background: fuchsia;
+    border-radius: 30px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.formulario{
+    width:80%;
+    margin: 20px 50px;
+    background:fuchsia;
+    color:black;
+}
+input[type="text"], input[type="email"], input[type="number"]{
+    width: 100%;
+    height: 35px;    
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
+    outline: 0 none;
+}
+select{
+    width:100%;
+    height:35px;
+}
+textarea{
+    width:100%;
+}
+textarea:focus{
+    outline:0 none;
+}
+.boton-continuar{
+    width:200px;
+    margin:auto;
+    display:block;
+    background:yellow;
+    color:black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius:20px;
+}
+.boton-continuar:hover{
+    background-color:yellow;
+    color: blue;
+    transform: scale(1.05);
+}
+.footer-formulario{
+    width: 700px;    
+    padding: 30px;
+    margin-top: 10px;    
+    background-color:fuchsia;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+/*Mediaqueris para Celulares*/
+@media only screen and (max-width:480px){    
+    /*Mediaqueris Tienda Virtual*/
+    .tienda{
+        width: 390px;     
+        padding: 5px;   
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 5px;
+        }
+    .producto{
+        background:deeppink;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        }
+    .contenedor-imagen {
+        position: relative; /* Para posicionar el corazón encima de la imagen */
+        display: flex;
+        width: 165px;
+        height: 150px;       
+        }
+    .contenedor-imagen img{
+        width: 100%; 
+        border-radius: 8px;
+        object-fit:cover;
+        display: block;
+        }
+    /* Estilo inicial del botón (Gris/Apagado)*/
+    .btn-favorito {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        color: #ccc; /* Color predeterminado */
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    /* Estado ACTIVO (Cuando se marca) */
+    .btn-favorito.activo {
+        color: red; /* ojo para corazón / Amarillo para estrella */
+        transform: scale(1.2);
+        }
+    /* Si quieres que las estrellas sean amarillas en lugar de rojas */
+    .btn-favorito.activo .fa-star {
+        color: #f1c40f;
+        }
+    .boton-comprar{
+        width:120px;
+        margin:auto;
+        display:block;
+        background:yellow;
+        color:black;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+        border-radius:20px;
+        }
+    .boton-comprar:hover{
+        background-color:yellowgreen;
+        color: blue;
+        transform: scale(1.05);
+        }
+    .footer-tienda{
+        width: 390px;
+        padding: 30px;
+        background-color: fuchsia;
+        color: black;    
+        text-align: center;    
+        justify-content: center;
+        align-items: center;
+        display: block;
+        }
+
+    /*Mediaqueris Galeria*/
+    .banner{
+        margin-bottom: 10px;
+        border: 3px solid deeppink;
+        border-radius: 20px;
+        }
+    .galeria-container{
+        max-width: 500px;
+        margin: 5px auto;
+        background-color:black;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));        
+        display: flex;             /* Activa el modo flexible */
+        justify-content: center;    /* Centra las imágenes horizontalmente */
+        align-items: center;        /* Centra las imágenes verticalmente */
+        flex-wrap: wrap;           /* Permite que las imágenes bajen a la siguiente fila */
+        gap: 10px;                 /* Añade espacio entre las imágenes */     
+        }
+    .item{
+        width: 180px;
+        background: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.5s ease;        
+        }
+    .item:hover{
+        transform: scale(1.05);
+        }
+    .item img{
+        width: 100%;
+        height: 250px;
+        border: 3px solid fuchsia;    
+        object-fit: cover;
+        display: block;
+        cursor: zoom-in;
+        }
+    .footer-galeria{
+        width: 390px;        
+        margin: 5px;
+        padding: 30px;
+        background-color: fuchsia;
+        color: black;
+        text-align: center;    
+        justify-content: center;
+        align-items: center;
+        display: block;
+        }
+    /*Mediaqueris Modal Galeria*/
+    .modal{
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+        }
+    #imagen-modal{
+        max-width: 90%;
+        max-height: 100%;
+        border: 3px solid white;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);    
+        }
+    .cerrar{
+        position: absolute;
+        color: white;
+        top: 20px;
+        right: 35px;    
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+    /*Mediaqueris Video*/
+    .video-container{
+        max-width: 390px;    
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;           
+        }
+    .video-item{
+        width: 300px;   
+        background: #000;
+        border-radius: 10px;
+        overflow: hidden;    
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.5s ease;
+        cursor: pointer;        
+        }
+    .video-item:hover{
+        transform: scale(1.02);
+        }
+    .video-item video{
+        width: 250px;
+        height: 350px;
+        object-fit:contain;
+        display: block;
+        }
+    .footer-video{
+        width: 390px;
+        margin-top: 10px;
+        padding: 30px;
+        background-color:fuchsia;
+        color: black;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: block;
+        }
+
+    /*Mediaqueris Formulario*/
+    .suscripcion{
+        width:390px;
+        margin-top:10px;
+        background: fuchsia;
+        border-radius: 30px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        }
+    .formulario{
+        width: 350px;
+        margin: 10px 20px;
+        background:fuchsia;
+        color:black;
+        }
+    input[type="text"], input[type="email"], input[type="number"]{
+        width:100%;
+        height: 35px;
+        }
+    input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
+        outline:0 none;
+        }
+    select{
+        width:100%;
+        height:35px;
+        }
+    textarea{
+        width:100%;
+        }
+    textarea:focus{
+        outline:0 none;
+        }
+    .boton-continuar{
+        width:200px;
+        margin:auto;
+        display:block;
+        background:yellow;
+        color:black;
+        font-family:Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+        border-radius:20px;    
+        }
+    .boton-continuar:hover{
+        background-color:yellow;
+        color: blue;
+        transform: scale(1.05);   
+        }
+    .footer-formulario{
+        width: 390px;        
+        margin-top: 10px;
+        padding: 30px;        
+        background-color:fuchsia;
+        color: black;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: block;
+        }
+    }
